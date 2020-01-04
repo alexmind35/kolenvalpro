@@ -17,3 +17,5 @@ class HeroView(View):
                           "why_list": why_section,
                       })
 
+def admin_list(request):
+    return render(request, "pages/admin_app.html")

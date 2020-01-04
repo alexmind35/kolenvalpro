@@ -1,0 +1,20 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+
+
+
+{% block branding %}
+    <a class="logo__link" href="{% url 'home' %}"><img class="header__logo" src="{% static '/img/logo.svg' %}" alt="Ремонт коленчатых валов в Анапе" height="70px"/></a>
+{% endblock branding %}
+
+{% block content_title %}
+    {% if title %}<h1 class="admin__title">{{ title }}</h1>
+    {% endif %}
+{% endblock %}
+
+
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}

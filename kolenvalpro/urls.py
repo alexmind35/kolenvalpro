@@ -18,11 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 from kolenvalpro import settings
-
+from mainpage.views import admin_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("mainpage.urls")),
+    path("adminapp/", admin_list, name='adminapp'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

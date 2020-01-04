@@ -1,0 +1,576 @@
+@font-face {
+    font-family: "Gagalin-Regular";
+    src: url("../fonts/Gagalin-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MontserratAlternates-Regular";
+    src: url("../fonts/MontserratAlternates-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MontserratAlternates-Bold";
+    src: url("../fonts/MontserratAlternates-Bold.woff") format("woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("../fonts/Roboto-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Header******************************************************************************************/
+
+body, body.login {
+    background-image: url("../img/bg.jpg") !important;
+    background-position: center !important;
+    background-size: cover !important;
+    width: 100%;
+    height: 100vh;
+    font-size: 16px;
+    color: #bcbcbc !important;
+}
+
+a:link, a:visited {
+    color: #C4C4C4;
+}
+
+a.section:link, a.section:visited {
+    color: #DFB799;
+}
+
+.dashboard #content {
+    width: 700px;
+}
+
+.module h2, .module caption, .inline-group h2 {
+
+    background: none;
+    font-family: "MontserratAlternates-Regular";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0.14em;
+    color: #DFB799;
+}
+
+/* Blocks */
+.module {
+    padding: 0 !important;
+    background: none;
+    margin-bottom: 0 !important;
+}
+
+.module caption, .inline-group h2 {
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#header {
+    padding: 5px 20px;
+    background: none;
+}
+
+#content {
+    width: 100%;
+    max-width: 980px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 !important;
+}
+
+#content-main {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40rem;
+    z-index: 99 !important;
+}
+
+#content-related {
+
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    max-width: 100%;
+    position: relative;
+    margin-right: 0;
+    float: none;
+}
+
+@media (max-width: 1024px) {
+    #content-related {
+        margin-right: 0 !important;
+    }
+}
+
+.admin__title {
+    text-align: center;
+    font-family: "Gagalin-Regular";
+    font-size: 1.5rem;
+    line-height: 3rem;
+    letter-spacing: 0.14em;
+    color: #DFB799;
+}
+
+#content-related .actionlist {
+    padding: 0;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 200px;
+}
+
+div.breadcrumbs {
+    background: none;
+    padding: 10px 40px;
+    border: none;
+    text-align: left;
+    max-width: 40rem;
+    width: 100%;
+    margin: 0 auto;
+    color: #BCBCBC;
+    font-size: 0.8rem;
+    font-family: "MontserratAlternates-Regular";
+}
+
+td, th {
+    border-bottom: 1px solid rgba(196, 196, 196, 0.264);
+}
+
+/*
+МЕНЮ ВХОДА
+#user-tools {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: left;
+    max-width: 200px;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+}
+*/
+.card {
+    padding: .5rem;
+    background: #3d4247;
+    border-radius: 12px;
+    box-shadow: 1px 14px 18px 3px rgba(0, 0, 0, .25);
+    position: relative;
+    margin-bottom: 1.7rem;
+    z-index: 9;
+}
+
+.card:before {
+    content: "" "";
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    top: .5rem;
+    left: .5rem;
+    background: url(../img/screw.png) no-repeat;
+    opacity: .6;
+}
+
+.card .card__wrapper {
+    background: #4d555d; /*#43494f;*/
+    border-radius: 10px;
+    padding: .75rem;
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.why__slider-icon--left {
+
+    width: 57px;
+    height: 39px;
+    background: url(../img/screw.png) no-repeat;
+    opacity: 0.6;
+    z-index: 9;
+    float: left;
+    left: 0.5rem;
+    bottom: -0.7rem;
+    position: absolute;
+    display: block;
+}
+
+.why__slider-icon--bottom {
+    bottom: -0.8rem;
+    right: -1.9rem;
+    float: right;
+    display: block;
+    position: absolute;
+    width: 57px;
+    height: 39px;
+    background: url(../img/screw.png) no-repeat;
+    opacity: 0.6;
+    z-index: 9;
+}
+
+.work__slider-icon--right-price {
+    display: block;
+    position: absolute;
+    width: 57px;
+    height: 39px;
+    background: url(../img/screw.png) no-repeat;
+    opacity: 0.6;
+    z-index: 9;
+    top: 0.5rem;
+    right: -2rem;
+    float: right;
+}
+
+#content-main > div.app-mainpage.module > table > tbody > tr:nth-child(2n) {
+    background-color: rgba(33, 17, 3, 0.13);
+}
+
+#content-main > div.app-mainpage.module {
+    order: 1;
+}
+
+#content-main > div.app-auth.module {
+    order: 2;
+}
+
+#content-main > div.app-mainpage.module > table > tbody > tr.model-hero > td:nth-child(2) > a {
+    display: none;
+}
+
+#content-main > div.app-mainpage.module > table > tbody > tr.model-why > td:nth-child(2) > a {
+    display: none;
+}
+
+#content-main > div.app-mainpage.module > table > tbody > tr.model-services > td:nth-child(2) > a {
+    display: none;
+}
+
+/*
+ЛОГИН ВХОД ФОРМА*/
+
+.login #content-main {
+    z-index: 99;
+}
+
+.login #container {
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    width: 22rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+    margin: 0 auto !important;
+    color: #b28e5d;
+}
+
+.login .form-row #id_username, .login .form-row #id_password {
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #535a61;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .12);
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    outline: none;
+    color: #ae9589 !important;
+}
+
+.login .form-row label {
+    color: #bcbcbc !important;
+}
+
+.login .submit-row {
+    clear: both;
+    padding: 0 !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    position: relative;
+    cursor: pointer;
+    padding: 0.8rem;
+    width: 8rem;
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 100%, 99%, .13568) .01%, hsla(0, 11%, 93%, .14084) .02%, rgba(9, 8, 8, .212)), #dfb799;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25), inset 0 -46px 23px rgba(22, 31, 65, .25);
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #2c333b;
+    letter-spacing: .1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.object-tools a:link, .object-tools a:visited {
+    position: relative;
+    cursor: pointer;
+    padding: 0.7rem;
+    width: 7rem;
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 100%, 99%, .13568) .01%, hsla(0, 11%, 93%, .14084) .02%, rgba(9, 8, 8, .212)), #dfb799;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25), inset 0 -46px 23px rgba(22, 31, 65, .25);
+    border-radius: 100px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #2c333b;
+    letter-spacing: .1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/*
+ПОЛЕ С ОШИБКОЙ*/
+.errornote {
+    font-size: 0.9rem !important;
+    color: #a48c81 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: none !important;
+    background-position: 5px 12px;
+}
+
+/*
+ПОСЛЕДНИЕ ДЕЙСТВИЯ*/
+#content-related {
+    background: none;
+}
+
+/*ДОБАВЛЕНИЕ ИЗМЕНЕНИЯ ДЕЙСТВИЙ*/
+.object-tools {
+    margin-top: 0 !important;
+    margin-bottom: 2rem !important;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    z-index: 99;
+}
+
+#changelist .actions {
+    padding: 0 !important;
+    background: none !important;
+    width: 20rem !important;
+    display: flex;
+    flex-direction: column;
+}
+
+#changelist .actions .button {
+    position: relative !important;
+    cursor: pointer !important;
+    padding: 0.7rem !important;
+    width: 9rem !important;
+    height: 2.6rem !important;
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 100%, 99%, .13568) .01%, hsla(0, 11%, 93%, .14084) .02%, rgba(9, 8, 8, .212)), #dfb799 !important;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25), inset 0 -46px 23px rgba(22, 31, 65, .25) !important;
+    border-radius: 100px !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    color: #2c333b !important;
+    letter-spacing: .1rem !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    border: none !important;
+}
+
+#changelist .actions label {
+    margin-bottom: 1rem;
+}
+
+#changelist .actions label {
+    position: absolute;
+    left: 11rem;
+    top: 1rem;
+}
+
+#changelist .actions select {
+    height: 2rem !important;
+    background: #3d4247 !important;
+    color: #c2a592 !important;
+    border: 1px solid rgba(22, 31, 65, 0.07) !important;
+    border-radius: 10px !important;
+    font-size: 0.8rem !important;
+}
+
+#changelist .actions span.action-counter, #changelist .actions span.clear, #changelist .actions span.question {
+    margin: 0 !important;
+    margin-top: 0.5rem !important;
+}
+
+textarea:focus, input:focus, select:focus {
+    outline: none !important;
+}
+
+#changelist table thead th {
+    background: #3d4247 !important;
+    color: #c2a592 !important;
+}
+
+.row1 {
+    background: #4d555d !important;
+}
+
+.row2 {
+    background: #525a63 !important;
+}
+
+#changelist .paginator {
+    color: #949891 !important;
+    border-bottom: none !important;
+    background: none !important;
+}
+
+.paginator {
+    border-top: 1px solid hsla(0, 100%, 99%, 0) !important;
+}
+
+thead th a:link, thead th a:visited {
+    color: #947e74 !important;
+}
+
+thead th, tfoot td {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+#changelist-form > div.actions > label > select > option:nth-child(2) {
+    background: #3d4247 !important;
+}
+
+#changelist-form > div.actions > label > select > option:nth-child(1) {
+    background: #9d867a !important;
+}
+
+
+#changelist table input:before {
+    content: "\2713";
+    color: transparent;
+    background: #4d555d;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 22px;
+    margin: -3px 0 0 -5px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+    transition: color ease .3s;
+    cursor: pointer;
+}
+
+#changelist table input[type=checkbox]:checked:before {
+    color: #a78f83;
+    transition: color ease .3s;
+}
+
+.submit-row {
+    background: none !important;
+    border: none !important;
+}
+.required label, label.required {
+    color: #bcbcbc !important;
+}
+.submit-row a.deletelink {
+    font-family: "MontserratAlternates-Regular";
+    background: none !important;
+    border-radius: 50px !important;
+    color: #BCBCBC !important;
+    border: 2px solid #BCBCBC !important;
+}
+#services_form > div > div > input[type=submit]:nth-child(3){
+    display: none !important;
+}
+#services_form > div > div > input[type=submit]:nth-child(4){
+   display: none !important;
+}
+#services_form > div > div > input.default{
+    position: relative !important;
+    cursor: pointer !important;
+    padding: 0.7rem !important;
+    width: 9rem !important;
+    height: 2.6rem !important;
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 100%, 99%, .13568) .01%, hsla(0, 11%, 93%, .14084) .02%, rgba(9, 8, 8, .212)), #dfb799 !important;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25), inset 0 -46px 23px rgba(22, 31, 65, .25) !important;
+    border-radius: 100px !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    color: #2c333b !important;
+    letter-spacing: .1rem !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    border: none !important;
+}
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], input[type=tel], textarea, select, .vTextField {
+    height: 1.5rem !important;
+    background: #3d4247 !important;
+    color: #c2a592 !important;
+    border: 1px solid rgba(22, 31, 65, 0.07) !important;
+    border-radius: 10px !important;
+    font-size: 0.8rem !important;
+}
+.vTextField, .vUUIDField {
+    width: 20rem;
+    margin-left: -3rem;
+}
+.form-row {
+    border-bottom: 1px solid hsla(0, 11%, 93%, .14084) !important;
+}
+/*
+СООБЩЕНИЯ MESSAGELIST*/
+ul.messagelist {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+}
+ul.messagelist li {
+    background: linear-gradient(90deg,rgb(77, 85, 93),hsla(19,27%,58%,0));
+    font-family: MontserratAlternates-Regular;
+    color: #e6dad0;
+    bottom: 0;
+    border-radius: 0 0 12px 12px;
+    text-shadow: 0 4px 4px rgba(0,0,0,.52);
+    font-size: 12px !important;
+}
+#id_image_hero{
+        position: relative !important;
+    cursor: pointer !important;
+    padding: 0.7rem !important;
+    width: 9rem !important;
+    height: 2.6rem !important;
+
+}
+.aligned label {
+    color: #bcbcbc !important;
+}
