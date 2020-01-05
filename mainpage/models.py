@@ -3,11 +3,22 @@ from django.db import models
 
 class Hero(models.Model):
     heading_hero = models.CharField("Название", max_length=250)
-    image_hero = models.ImageField("Фотография", upload_to="mainpage/hero", default="", blank=True)
+    image_hero = models.ImageField("Изображение", upload_to="mainpage/hero", default="", blank=True)
 
     class Meta:
         verbose_name = "Главная"
         verbose_name_plural = "Главные"
+
+    def admin_image(self):
+        if self.image_hero:
+            from django.utils.safestring import mark_safe
+            return mark_safe(
+                u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image_hero.url))
+        else:
+            return '(Нет изображения)'
+
+    admin_image.short_description = 'Изображение'
+    admin_image.allow_tags = True
 
 
 class Services(models.Model):

@@ -25,7 +25,22 @@
     font-style: normal;
 }
 
-/*Header******************************************************************************************/
+/*НАЧАЛО*/
+.changelink, .inlinechangelink {
+    background: url(../img/icons/admin/change_icon.svg) 0 1px no-repeat !important;
+    padding-left: 20px !important;
+}
+
+.addlink {
+    padding-left: 20px !important;
+    background: url(../img/icons/admin/add_icon.svg) 0 1px no-repeat !important;
+}
+
+@media (max-width: 380px) {
+    .addlink {
+        display: none !important;
+    }
+}
 
 body, body.login {
     background-image: url("../img/bg.jpg") !important;
@@ -37,16 +52,33 @@ body, body.login {
     color: #bcbcbc !important;
 }
 
+p {
+    z-index: 99 !important;
+}
+
 a:link, a:visited {
-    color: #C4C4C4;
+    color: #C4C4C4 !important;
 }
 
 a.section:link, a.section:visited {
-    color: #DFB799;
+    color: #DFB799 !important;
+}
+
+@media (max-width: 1024px) {
+    #container {
+        overflow: hidden !important;
+    }
 }
 
 .dashboard #content {
     width: 700px;
+}
+
+@media (max-width: 700px) {
+    .dashboard #content {
+        width: 100%;
+        margin: 1rem;
+    }
 }
 
 .module h2, .module caption, .inline-group h2 {
@@ -55,7 +87,7 @@ a.section:link, a.section:visited {
     font-family: "MontserratAlternates-Regular";
     font-size: 1.5rem;
     line-height: 2rem;
-    letter-spacing: 0.14em;
+    letter-spacing: 0;
     color: #DFB799;
 }
 
@@ -63,7 +95,7 @@ a.section:link, a.section:visited {
 .module {
     padding: 0 !important;
     background: none;
-    margin-bottom: 0 !important;
+    margin-bottom: 1rem !important;
 }
 
 .module caption, .inline-group h2 {
@@ -76,6 +108,7 @@ a.section:link, a.section:visited {
 #header {
     padding: 5px 20px;
     background: none;
+    color: #d4b7a6 !important;
 }
 
 #content {
@@ -91,6 +124,13 @@ a.section:link, a.section:visited {
     padding: 0 !important;
 }
 
+@media (max-width: 767px) {
+    #content {
+        width: auto;
+        margin: 1rem;
+    }
+}
+
 #content-main {
 
     display: flex;
@@ -98,6 +138,13 @@ a.section:link, a.section:visited {
     justify-content: space-between;
     width: 40rem;
     z-index: 99 !important;
+}
+
+@media (max-width: 700px) {
+    #content-main {
+        width: 100%;
+        margin: 0rem;
+    }
 }
 
 #content-related {
@@ -117,13 +164,20 @@ a.section:link, a.section:visited {
     }
 }
 
-.admin__title {
+.admin__title, #content > h1 {
     text-align: center;
     font-family: "Gagalin-Regular";
     font-size: 1.5rem;
     line-height: 3rem;
     letter-spacing: 0.14em;
     color: #DFB799;
+}
+
+@media (max-width: 468px) {
+    .admin__title, #content > h1 {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
 }
 
 #content-related .actionlist {
@@ -148,27 +202,15 @@ div.breadcrumbs {
     font-family: "MontserratAlternates-Regular";
 }
 
+div.breadcrumbs a {
+    color: #ddd !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
 td, th {
     border-bottom: 1px solid rgba(196, 196, 196, 0.264);
 }
 
-/*
-МЕНЮ ВХОДА
-#user-tools {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    font-weight: 300;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    text-align: left;
-    max-width: 200px;
-    position: absolute;
-    top: 5rem;
-    left: 0;
-}
-*/
 .card {
     padding: .5rem;
     background: #3d4247;
@@ -177,6 +219,12 @@ td, th {
     position: relative;
     margin-bottom: 1.7rem;
     z-index: 9;
+}
+
+@media (max-width: 700px) {
+    .card {
+        width: 100%;
+    }
 }
 
 .card:before {
@@ -194,7 +242,7 @@ td, th {
 }
 
 .card .card__wrapper {
-    background: #4d555d; /*#43494f;*/
+    background: #4d555d;
     border-radius: 10px;
     padding: .75rem;
     height: 100%;
@@ -203,6 +251,7 @@ td, th {
     -ms-flex-direction: column;
     flex-direction: column;
 }
+
 
 .why__slider-icon--left {
 
@@ -244,12 +293,9 @@ td, th {
     float: right;
 }
 
-#content-main > div.app-mainpage.module > table > tbody > tr:nth-child(2n) {
-    background-color: rgba(33, 17, 3, 0.13);
-}
-
 #content-main > div.app-mainpage.module {
     order: 1;
+    margin-bottom: 1rem !important;
 }
 
 #content-main > div.app-auth.module {
@@ -270,6 +316,10 @@ td, th {
 
 /*
 ЛОГИН ВХОД ФОРМА*/
+#login-form > div.submit-row > input[type=submit]:hover {
+    background-color: #f6f6f6 !important;
+    transition: color ease .3s;
+}
 
 .login #content-main {
     z-index: 99;
@@ -307,14 +357,16 @@ td, th {
 
 .login .form-row label {
     color: #bcbcbc !important;
+    padding-top: 1rem !important;
 }
 
 .login .submit-row {
     clear: both;
-    padding: 0 !important;
+    padding: 10px !important;
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
@@ -376,30 +428,53 @@ td, th {
     z-index: 99;
 }
 
+@media (max-width: 767px) {
+    .object-tools {
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+        display: flex !important;
+        justify-content: center !important;
+        top: 0 !important;
+        right: 0 !important;
+    }
+}
+
 #changelist .actions {
     padding: 0 !important;
     background: none !important;
     width: 20rem !important;
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+    #changelist .actions {
+        padding: 2rem !important;
+    }
 }
 
 #changelist .actions .button {
-    position: relative !important;
-    cursor: pointer !important;
-    padding: 0.7rem !important;
-    width: 9rem !important;
-    height: 2.6rem !important;
-    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 100%, 99%, .13568) .01%, hsla(0, 11%, 93%, .14084) .02%, rgba(9, 8, 8, .212)), #dfb799 !important;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, .25), inset 0 -46px 23px rgba(22, 31, 65, .25) !important;
-    border-radius: 100px !important;
-    text-transform: uppercase !important;
-    text-align: center !important;
-    color: #2c333b !important;
-    letter-spacing: .1rem !important;
-    font-size: 0.7rem !important;
-    font-weight: 700 !important;
-    border: none !important;
+    font-family: "MontserratAlternates-Regular", serif;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 50px !important;
+    color: #BCBCBC !important;
+    border: 2px solid #BCBCBC !important;
+    bottom: 0 !important;
+    text-shadow: none !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+    height: 39px !important;
+}
+
+@media (max-width: 767px) {
+    #changelist .actions .button {
+        position: absolute;
+        right: 0;
+        bottom: -0.5rem !important;
+    }
 }
 
 #changelist .actions label {
@@ -409,7 +484,6 @@ td, th {
 #changelist .actions label {
     position: absolute;
     left: 11rem;
-    top: 1rem;
 }
 
 #changelist .actions select {
@@ -454,7 +528,7 @@ textarea:focus, input:focus, select:focus {
 }
 
 thead th a:link, thead th a:visited {
-    color: #947e74 !important;
+    color: #c2a592 !important;
 }
 
 thead th, tfoot td {
@@ -498,40 +572,53 @@ thead th, tfoot td {
 .submit-row {
     background: none !important;
     border: none !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
 }
+
+@media (max-width: 767px) {
+    .submit-row {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+}
+
 .required label, label.required {
     color: #bcbcbc !important;
 }
+
 .submit-row a.deletelink {
     font-family: "MontserratAlternates-Regular";
     background: none !important;
     border-radius: 50px !important;
     color: #BCBCBC !important;
     border: 2px solid #BCBCBC !important;
+
 }
-#services_form > div > div > input[type=submit]:nth-child(3){
+
+#services_form > div > div > input[type=submit]:nth-child(3) {
     display: none !important;
 }
-#services_form > div > div > input[type=submit]:nth-child(4){
-   display: none !important;
+
+#services_form > div > div > input[type=submit]:nth-child(4) {
+    display: none !important;
 }
-#services_form > div > div > input.default{
-    position: relative !important;
-    cursor: pointer !important;
-    padding: 0.7rem !important;
-    width: 9rem !important;
-    height: 2.6rem !important;
-    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 100%, 99%, .13568) .01%, hsla(0, 11%, 93%, .14084) .02%, rgba(9, 8, 8, .212)), #dfb799 !important;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, .25), inset 0 -46px 23px rgba(22, 31, 65, .25) !important;
-    border-radius: 100px !important;
-    text-transform: uppercase !important;
-    text-align: center !important;
-    color: #2c333b !important;
-    letter-spacing: .1rem !important;
-    font-size: 0.7rem !important;
-    font-weight: 700 !important;
-    border: none !important;
+
+#services_form > div > div > input.default {
+    font-family: "MontserratAlternates-Regular", serif;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 50px !important;
+    color: #BCBCBC !important;
+    border: 2px solid #BCBCBC !important;
+    bottom: 0 !important;
+    text-shadow: none !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+    height: 39px !important;
 }
+
 input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], input[type=tel], textarea, select, .vTextField {
     height: 1.5rem !important;
     background: #3d4247 !important;
@@ -540,13 +627,16 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     border-radius: 10px !important;
     font-size: 0.8rem !important;
 }
+
 .vTextField, .vUUIDField {
-    width: 20rem;
+    width: 20rem !important;
     margin-left: -3rem;
 }
+
 .form-row {
-    border-bottom: 1px solid hsla(0, 11%, 93%, .14084) !important;
+    border-bottom: none !important;
 }
+
 /*
 СООБЩЕНИЯ MESSAGELIST*/
 ul.messagelist {
@@ -554,23 +644,256 @@ ul.messagelist {
     max-width: 700px;
     width: 100%;
 }
+
 ul.messagelist li {
-    background: linear-gradient(90deg,rgb(77, 85, 93),hsla(19,27%,58%,0));
-    font-family: MontserratAlternates-Regular;
+    background: linear-gradient(90deg, #846f4b, hsla(19, 27%, 58%, 0));
+    font-family: MontserratAlternates-Regular, serif;
     color: #e6dad0;
     bottom: 0;
-    border-radius: 0 0 12px 12px;
-    text-shadow: 0 4px 4px rgba(0,0,0,.52);
+    border-radius: 0;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, .52);
     font-size: 12px !important;
 }
-#id_image_hero{
-        position: relative !important;
-    cursor: pointer !important;
-    padding: 0.7rem !important;
-    width: 9rem !important;
-    height: 2.6rem !important;
 
+#id_image_hero {
+    background: rgba(9, 8, 8, .212);
+    padding: 0;
 }
+
 .aligned label {
     color: #bcbcbc !important;
+}
+
+#hero_form > div > div > input[type=submit]:nth-child(3) {
+    display: none;
+}
+
+#hero_form > div > div > input[type=submit]:nth-child(4) {
+    display: none;
+}
+
+p.file-upload {
+    color: #888484 !important;
+}
+
+input[type=submit].default, .submit-row input.default {
+    font-family: "MontserratAlternates-Regular", serif;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 50px !important;
+    color: #BCBCBC !important;
+    border: 2px solid #BCBCBC !important;
+    bottom: 0 !important;
+    text-shadow: none !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+    height: 39px !important;
+}
+
+/*ИСТОРИЯ ИЗМЕНЕНИЙ*/
+table#change-history {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#change-history > thead > tr > th {
+    background-color: #3d4247 !important;
+    color: #c2a592 !important;
+}
+
+/*ПОЛЬЗОВАТЕЛИ И ГРУППЫ*/
+#changelist-filter {
+    display: none !important;
+}
+
+#changelist-filter ul {
+    border-bottom: none !important;
+}
+
+.change-list .filtered .results {
+    margin-right: 0 !important;
+}
+
+#changelist-search {
+    display: none !important;
+}
+
+#changelist #toolbar {
+    margin-bottom: -1rem !important;
+    background: none !important;
+}
+
+#changelist #toolbar {
+
+    border-top: none !important;
+    border-bottom: none !important;
+
+}
+
+#changelist .actions label {
+    margin-top: 0rem;
+    margin-left: 0rem;
+}
+
+@media (max-width: 468px) {
+    #changelist .actions label {
+        display: flex !important;
+        position: absolute !important;
+        top: 1rem !important;
+        width: auto !important;
+        left: 1rem !important;
+        margin: 0 auto;
+    }
+}
+
+/*ПОЛЬЗОВАТЕЛИ*/
+#user_form > div > fieldset > h2 {
+    letter-spacing: 0 !important;
+    font-size: 1rem !important;
+}
+
+.selector .selector-available h2 {
+    background: none !important;
+    border: none !important;
+    font-size: 1rem !important;
+    color: #bcbcbc !important;
+}
+
+.selector .selector-filter {
+    background: none !important;
+    border: none !important;
+
+}
+
+.selector select {
+    width: 280px !important;
+}
+
+#id_groups_filter {
+    display: none !important;
+}
+
+.selector-chosen h2 {
+    background: none !important;
+    border: none !important;
+    font-size: 1rem !important;
+    color: #bcbcbc !important;
+}
+
+#id_groups_add_all_link {
+    display: none !important;
+}
+
+.selector ul.selector-chooser {
+    background-color: #3d4247 !important;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 0 !important;
+}
+
+.selector {
+    width: 600px !important;
+    display: flex;
+    flex-direction: row;
+}
+
+form .aligned p.help, form .aligned div.help {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+a.selector-chooseall, a.selector-clearall {
+    color: #9c857b !important;
+    opacity: 1 !important;
+}
+
+#id_user_permissions_filter {
+    display: none !important;
+}
+
+#user_form > div > div > input[type=submit]:nth-child(3) {
+    display: none !important;
+}
+
+#user_form > div > div > input[type=submit]:nth-child(4) {
+    display: none !important;
+}
+
+p.datetime {
+    color: #bcbcbc !important;
+    font-weight: 300 !important;
+}
+
+/*ДОБАВИТЬ ГРУППУ*/
+#id_permissions_input, #id_permissions_filter > label, #id_permissions_filter {
+    display: none !important;
+}
+
+#group_form > div > div > input[type=submit]:nth-child(2), #group_form > div > div > input[type=submit]:nth-child(3) {
+    display: none !important;
+}
+
+.submit-row p.deletelink-box {
+    margin-left: 1rem !important;
+}
+
+.change-list .filtered {
+    min-height: 300px !important;
+}
+
+/*
+НАВИГАЦИОННАЯ ПАНЕЛЬ АДМИНИСТАТОРА*/
+#user-tools {
+    display: flex;
+    flex-direction: column;
+    text-transform: none !important;
+    text-align: left !important;
+}
+
+@media (max-width: 1024px) {
+    #user-tools {
+        display: inline-block;
+        text-align: center !important;
+    }
+}
+
+#user-tools a {
+    padding-top: 0.5rem;
+    border-bottom: none !important;
+}
+
+
+#user-tools a:focus, #user-tools a:hover {
+    color: #b39a8c !important;
+}
+
+#services_form > div > div > input[type=submit]:nth-child(2) {
+    display: none !important;
+}
+
+.delete-confirmation form .cancel-link {
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 100%, 99%, .13568) .01%, hsla(0, 11%, 93%, .14084) .02%, rgba(9, 8, 8, .212)), #dfb799 !important;
+}
+
+@media (max-width: 767px) {
+    .object-tools {
+        overflow: visible !important;
+    }
+}
+
+@media (max-width: 468px) {
+    #changelist .actions span {
+        display: none !important;
+    }
+}
+
+#hero_form > div > div > input[type="submit"]:nth-child(2) {
+    display: none !important;
+}
+
+@media (max-width: 767px) {
+    .aligned .form-row > div {
+        width: 100% !important;
+    }
 }

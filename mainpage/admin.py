@@ -5,7 +5,7 @@ from .models import Hero, Services, Why
 
 @admin.register(Hero)
 class AdminHero(admin.ModelAdmin):
-    list_display = ["heading_hero", "image_hero"]
+    list_display = ["heading_hero", "admin_image"]
 
 
 @admin.register(Services)
