@@ -231,6 +231,15 @@
                 <li class="navigation__item">
                     <a class="navigation__link" href="#js-contacts">Контакты</a>
                 </li>
+                    {% if user.is_authenticated %}
+                      Привет, {{ user.username }}!
+                      <br>
+                      <a href="/logout">Выход</a>
+                    {% else %}
+                      <a href="/login">Вход</a>
+                      <br>
+                      <a href="/register">Регистрация</a>
+                    {% endif %}
             </ul>
             <ul class="header__btns">
                 <li class="header__item">
@@ -241,7 +250,7 @@
                     </a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="{% url 'adminapp' %}">
+                    <a class="header__link" href="login/">
                         <svg class="header__link-icon">
                             <use xlink:href="#login"></use>
                         </svg>
