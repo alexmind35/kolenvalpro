@@ -36,3 +36,23 @@ class Why(models.Model):
     class Meta:
         verbose_name = "Почему мы?"
         verbose_name_plural = "Почему мы?"
+
+
+class Work(models.Model):
+    image_work = models.ImageField("Фотография", upload_to="mainpage/work", default="", blank=True)
+    text_work = models.CharField("Описание", max_length=250)
+
+    class Meta:
+        verbose_name = "Работа"
+        verbose_name_plural = "Работа"
+
+    def admin_image(self):
+        if self.image_work:
+            from django.utils.safestring import mark_safe
+            return mark_safe(
+                u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image_work.url))
+        else:
+            return '(Нет изображения)'
+
+    admin_image.short_description = 'Изображение'
+    admin_image.allow_tags = True

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Hero, Services, Why
+from .models import Hero, Services, Why, Work
 
 
 @admin.register(Hero)
@@ -16,3 +16,8 @@ class AdminServices(admin.ModelAdmin):
 @admin.register(Why)
 class AdminWhy(admin.ModelAdmin):
     list_display = ["name_why", "text_why"]
+
+
+@admin.register(Work)
+class AdminWork(admin.ModelAdmin):
+    list_display = ["admin_image", "text_work"]
