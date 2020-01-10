@@ -210,7 +210,9 @@
     <header class="header" id="js-header">
         <div class="container-fluid" id="js-nav-container">
             <div class="logo__container">
-                 <a class="logo__link" href="{% url 'home' %}"><img class="header__logo" src="{% static '/img/logo.svg' %}" alt="Ремонт коленчатых валов в Анапе"/></a>
+                <a class="logo__link" href="{% url 'home' %}"><img class="header__logo"
+                                                                   src="{% static '/img/logo.svg' %}"
+                                                                   alt="Ремонт коленчатых валов в Анапе"/></a>
             </div>
             <ul class="navigation__list" id="js-nav">
                 <li class="navigation__item">
@@ -231,15 +233,20 @@
                 <li class="navigation__item">
                     <a class="navigation__link" href="#js-contacts">Контакты</a>
                 </li>
-                    {% if user.is_authenticated %}
-                      Привет, {{ user.username }}!
-                      <br>
-                      <a href="/logout">Выход</a>
-                    {% else %}
-                      <a href="/login">Вход</a>
-                      <br>
-                      <a href="/register">Регистрация</a>
-                    {% endif %}
+
+                {% if user.is_authenticated %}
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{% url 'logout' %} ">Выйти</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{% url 'login' %} ">Войти</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{% url 'register' %} ">Регистрация</a>
+                    </li>
+                {% endif %}
+
             </ul>
             <ul class="header__btns">
                 <li class="header__item">

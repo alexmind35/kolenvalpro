@@ -54,5 +54,5 @@ class Work(models.Model):
         else:
             return '(Нет изображения)'
 
-    admin_image.short_description = 'Изображение'
+    admin_image.short_description = 'Изображениееееее'
     admin_image.allow_tags = True
