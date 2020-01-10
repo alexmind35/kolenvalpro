@@ -44,7 +44,7 @@ class Work(models.Model):
 
     class Meta:
         verbose_name = "Работа"
-        verbose_name_plural = "Работаааааааааа"
+        verbose_name_plural = "Работа app1"
 
     def admin_image(self):
         if self.image_work:
@@ -54,5 +54,5 @@ class Work(models.Model):
         else:
             return '(Нет изображения)'
 
-    admin_image.short_description = 'Изображениееееее'
+    admin_image.short_description = 'Изображение app1'
     admin_image.allow_tags = True
