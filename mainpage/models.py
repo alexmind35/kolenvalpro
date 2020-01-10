@@ -44,7 +44,7 @@ class Work(models.Model):
 
     class Meta:
         verbose_name = "Работа"
-        verbose_name_plural = "Работа"
+        verbose_name_plural = "Работаааааааааа"
 
     def admin_image(self):
         if self.image_work:
